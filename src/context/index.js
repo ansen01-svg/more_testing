@@ -9,6 +9,7 @@ const ContextProvider = ({ children }) => {
 
     const [products, setProducts] = useState([])
     const [error, setError] = useState('')
+    const [cartAmount, setCartAmount] = useState(0)
 
     useEffect(() => {
         getProducts(url)
@@ -38,7 +39,7 @@ const ContextProvider = ({ children }) => {
 
     return (
         <AppContext.Provider 
-            value={{ products, setProducts, error }}
+            value={{ products, setProducts, error, cartAmount, setCartAmount }}
         >
             { children }
         </AppContext.Provider>
