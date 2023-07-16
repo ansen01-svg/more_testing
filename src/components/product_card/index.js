@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
+import { useMyContext } from '../../context';
+import { useState } from "react";
 
 
 function ProductCard({ product }) {
 
-    const { id, image, price, rating, title } = product;
+    const { image, price, rating, title } = product;
 
     return (
         <ProductCardWrapper>
@@ -58,17 +60,36 @@ function PriceHolder({ price }) {
 }
 
 function ButtonHolder() {
+
+    const { setCartAmount } = useMyContext();
+
+    const [disable, setDisable] = useState(false);
+
+    function addToCart() {
+        setCartAmount(cartAmount => cartAmount + 1)
+        setDisable(true)
+    }
+
     return (
         <ButtonWrapper className="button_holder">
-            <Button>
-                Add to cart
+            <Button handleClick={addToCart} disableButton={disable}>
+                {
+                    disable ? 'In cart' : 'Add to cart'
+                }
             </Button>
         </ButtonWrapper>
     )
 }
 
-export const Button = ({ children }) => {
-    return <button>{ children }</button>
+export const Button = (props) => {
+
+    const { children, handleClick, disableButton } = props;
+
+    return (
+        <button onClick={handleClick} disabled={disableButton}>
+            { children }
+        </button>
+    )
 }
 
 const ProductCardWrapper = styled.div`
