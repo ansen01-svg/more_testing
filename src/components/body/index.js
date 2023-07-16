@@ -148,6 +148,12 @@ const ProductsHolderWrapper = styled.div`
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+
+    @media and screen (min-width: 350px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 `
 
 const FooterWrapper = styled.div`

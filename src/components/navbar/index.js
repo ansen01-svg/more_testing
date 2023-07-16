@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useMyContext } from '../../context';
 
 
-const logo = 'FakeShop';
+const logo = 'POS';
 
 function Navbar() {
     return (
