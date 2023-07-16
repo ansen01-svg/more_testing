@@ -3,15 +3,16 @@ import { useMyContext } from '../../context';
 import { TextHolder } from '../navbar';
 import ProductCard from '../product_card';
 import { Button } from '../product_card';
+import { useState } from 'react';
 
 
 const headerText = 'Products'
 
 function Body() {
 
-    const { products } = useMyContext();
+    const { displayProducts } = useMyContext();
 
-    if(products.length === 0) {
+    if(displayProducts.length === 0) {
         return (
             <BodyWrapper height='87vh'>
                 <Loader />
@@ -21,7 +22,7 @@ function Body() {
 
     return (
         <BodyWrapper height='auto'>
-            <Content products={products} />
+            <Content products={displayProducts} />
         </BodyWrapper>
     )
 }
@@ -75,10 +76,30 @@ const ProductsHolder = ({ products }) => {
 }
 
 const Footer = () => {
+
+  const { products, displayProducts, setDisplayProducts } = useMyContext();
+
+  const [disable, setDisable] = useState(false);
+
+  function displayMoreProducts() {
+    const productCount = displayProducts.length + 4
+
+    if(productCount > products.length) {
+      setDisable(true)
+      return;
+    }
+    setDisplayProducts(products.slice(0, productCount))
+  }
+
     return (
         <FooterWrapper>
-          <Button>
-            See more products
+          <Button 
+            handleClick={displayMoreProducts}
+            disableButton={disable ? true : false}
+          >
+            {
+              disable ? 'No more products to see' : 'See more products'
+            }
           </Button>
         </FooterWrapper>
     )

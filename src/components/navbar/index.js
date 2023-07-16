@@ -53,14 +53,15 @@ const NavWrapper = styled.div`
     width: 100vw;
     height: 65px;
     padding: 0 20px;
-    background: green;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 10;
+    box-shadow: 2px 2px 8px rgb(215, 243, 215);
+    z-index: 20;
 
     @media screen and (min-width: 780px) {
         padding: 0 40px;
