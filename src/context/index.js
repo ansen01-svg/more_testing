@@ -20,9 +20,11 @@ const ContextProvider = ({ children }) => {
         .then(response => response.json())
         .then(data => {
             const filteredData = data.map(item => {
+                const shortenedTitle = item.title.slice(0, 20)
+
                 return {
                     id: item.id,
-                    title: item.title,
+                    title: shortenedTitle,
                     image: item.image,
                     price: item.price,
                     rating: item.rating.rate,
