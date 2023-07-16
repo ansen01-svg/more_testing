@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material";
 
 const theme = createTheme({
     typography: {
+      fontSize: 12,
       fontFamily: [
         '-apple-system',
         'BlinkMacSystemFont',
@@ -18,6 +19,18 @@ const theme = createTheme({
       h1: {
         fontSize: '25px',
         fontWeight: '500'
+      },
+      h2: {
+        fontSize: '20px',
+        fontWeight: '500',
+      },
+      h3: {
+        fontSize: '14px',
+        fontWeight: '500',
+      },
+      h4: {
+        fontSize: '12px',
+        fontWeight: '500'
       }
     },
     components: {
@@ -31,6 +44,11 @@ const theme = createTheme({
         }
         `,
       },
+      MuiTypography: {
+        styleOverrides: {
+          
+        }
+      }
     },
   });
 
