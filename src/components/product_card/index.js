@@ -94,29 +94,39 @@ export const Button = (props) => {
 
 const ProductCardWrapper = styled.div`
     width: 210px;
-    height: 300px;
+    height: 320px;
     position: relative;
-    cursor: pointer;
+    // border: 1px solid gray;
 
-    &:hover {
-        box-shadow: 5px 5px 10px rgb(215, 243, 215),
-        -5px -5px 10px rgb(215, 243, 215);
+    @media screen and (min-width: 850px) {
+        height: 300px;
+        cursor: pointer;
 
-        .button_holder {
-            display: block;
+        &:hover {
+            box-shadow: 5px 5px 10px rgb(215, 243, 215),
+            -5px -5px 10px rgb(215, 243, 215);
+    
+            .button_holder {
+                display: block;
+            }
         }
     }
 `
 
 const ImageWrapper = styled.div`
     width: 100%;
-    height: 80%;
+    height: 75%;
+    // border: 1px solid gray;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: contain;
         object-position: center;
+    }
+
+    @media screen and (min-width: 850px) {
+        height: 84%;
     }
 `
 
@@ -135,21 +145,19 @@ const RatingWrapper = styled.div`
 const TitleWrapper = styled.div`
     padding: 2px 10px;
     z-index: -10;
+    // border: 1px solid gray;
 `
 
 const PriceWrapper = styled.div`
     padding: 2px 10px;
+    // border: 1px solid gray;
 `
 
 const ButtonWrapper = styled.div`
     width: 100%;
-    padding: 2px 10px;
+    height: 32px;
     background: white;
-    position: absolute;
-    top: 80%;
-    left: 0;
-    z-index: 10;
-    display: none;
+    // border: 1px solid gray;
 
     button {
         width: 100%;
@@ -160,10 +168,23 @@ const ButtonWrapper = styled.div`
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
-        cursor: pointer;
+    }
 
-        &:hover {
-            border: 0.1px solid black; 
+    @media screen and (min-width: 850px) {
+        height: auto;
+        padding: 2px 10px;
+        position: absolute;
+        top: 84%;
+        left: 0;
+        z-index: 10;
+        display: none;
+
+        button {
+            cursor: pointer;
+            
+            &:hover {
+                border: 0.1px solid black; 
+            }
         }
     }
 `
