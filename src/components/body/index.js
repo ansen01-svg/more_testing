@@ -30,7 +30,7 @@ function Body() {
 const Loader = () => {
     return (
         <LoaderWrapper>
-            <div class="lds-roller">
+            <div className="lds-roller">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -145,15 +145,9 @@ const ProductsHolderWrapper = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
     flex-wrap: wrap;
-
-    @media and screen (min-width: 350px) {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
 `
 
 const FooterWrapper = styled.div`
@@ -170,8 +164,13 @@ const FooterWrapper = styled.div`
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
-      cursor: pointer;
       font-weight: 500;
+    }
+
+    @media screen and (min-width: 850px) {
+      button {
+        cursor: pointer;
+      }
     }
 `
 

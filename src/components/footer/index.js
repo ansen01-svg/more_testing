@@ -5,8 +5,8 @@ import { Typography } from "@mui/material";
 function Footer() {
     return (
         <FooterWrapper>
-            <Typography variant="p">
-                www.FakeShop.com
+            <Typography variant="p" data-testid="footer-text">
+                www.Pasighatonlineshop.com
             </Typography>
         </FooterWrapper>
     )
